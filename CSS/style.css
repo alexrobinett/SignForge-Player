@@ -1,0 +1,47 @@
+@font-face {
+    font-family: gibson;
+    src: url(/fonts/Gibson-Bold.otf);
+    font-weight: bold;
+    
+}
+@font-face {
+    font-family: "gibson";
+    src: url(/fonts/Gibson-Regular.otf);
+    font-weight: 300;
+    
+}
+@font-face {
+    font-family: "gibson";
+    src: url(/fonts/Gibson-Light.otf);
+    font-weight: 100;
+    
+}
+@font-face {
+    font-family: "gibson";
+    src: url(/fonts/Gibson-SemiBold.otf);
+    font-weight: 700;
+    
+}
+
+*{
+    box-sizing: border-box;
+    border: green 1px solid;
+}
+
+body{
+    border: solid red 3px;
+    height: 1080px;
+    width: 1920px;
+}
+
+img{
+    height: 500px;
+}
+
+
+h1{
+    font-size: 300px;
+    font-family: "gibson";
+    font-weight: bold;
+}
+
