@@ -1,5 +1,5 @@
 @font-face {
-    font-family: gibson;
+    font-family: "gibson";
     src: url(/fonts/Gibson-Bold.otf);
     font-weight: bold;
     
@@ -25,23 +25,208 @@
 
 *{
     box-sizing: border-box;
-    border: green 1px solid;
+    /* border: green 1px solid; */
 }
 
 body{
-    border: solid red 3px;
+    border: solid rgb(0, 0, 0) 5px;
     height: 1080px;
     width: 1920px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
+/* Product images */
 img{
-    height: 500px;
+    width: 55%;
 }
 
 
-h1{
-    font-size: 300px;
-    font-family: "gibson";
+.product-images{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    position: relative;
+    bottom: 510px;
+    
+}
+
+#center-image{
+    z-index: 1;
+    position: absolute;
+    left: 190px;
+    top: -30px;
+    width: 58%;
+}
+
+#left-image{
+    z-index: -1;
+    position: absolute;
+    top: -30px;
+}
+
+#right-image{
+    z-index: -1;
+    position: absolute;
+    left: 420px;
+    top: -30px;
+
+}
+
+/* deal copy */
+.price-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 70px;
+    
+}
+
+div>span{
+    font-family: 'gibson';
+}
+
+.price{
+    font-size: 350px;
     font-weight: bold;
 }
+#slash{
+    font-weight: 100;
+    color: red;
+    display: inline-block;
+    transform: rotate(-12deg);
+    z-index: 2;
+    margin: -30px;
+}
 
+#money-sign{
+    font-size: 140px;
+    position: relative;
+    bottom: 140px;
+}
+
+.deal-copy{
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 60px;
+}
+
+div>p{
+    font-family: 'gibson';
+    font-weight: 100;
+    font-size: 60px;
+    margin: 0px;
+}
+
+/* points circle */
+
+.points-circle{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#petro-puck{
+    width: 340px;
+    margin-bottom: -10px;
+    margin-right: 100px;
+
+}
+
+/* disclaimer */
+
+.disclaimer-container{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.disclaimer{
+    font-family: 'gibson';
+    font-size: 28px;
+    margin: 3px 0px 0px 70px;
+}
+
+section>span{
+    font-family: 'gibson';
+    font-size: 20px;
+    margin: 20px 0px 0px 70px;
+}
+
+
+/* Anitmations */
+
+#left-image{
+    animation-duration: 7s;
+    animation-name: swing-on-screen;
+    animation-iteration-count: infinite;
+    animation-direction: mormal;
+    animation-delay: 50ms;
+    animation-timing-function: ease-in-out;
+}
+#right-image{
+    animation-duration: 7s;
+    animation-name: swing-on-screen;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 250ms;
+    animation-timing-function: ease-in-out;
+}
+
+#center-image{
+    animation-duration: 7s;
+    animation-name: swing-on-screen;
+    animation-iteration-count: infinite;
+    animation-direction:  normal;
+    animation-delay: 150ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes swing-on-screen {
+    from{
+        transform: translate(-150px, 1200px)rotate(90deg);;
+        
+    }
+    10%{
+        transform: translate(-30px, -95px )rotate(-10deg);;
+    }
+    14%{transform: translate(-12px, 60px)rotate(3deg)
+        
+    }
+    24%{transform: translate(-3px, -10px)rotate(-1deg)
+        
+    }
+    28%{transform: translate(0px, 0 )rotate(0deg)
+        
+    }
+
+    to {
+
+    }
+}
+
+.disclaimer{
+    animation-duration: 4s;
+    animation-name: fade-on;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-on {
+    from{
+        transform: translate(-2000px,0);
+        
+    }
+    50%{
+        transform: translate(0, 0 );
+    }
+    to {
+
+    }
+}
