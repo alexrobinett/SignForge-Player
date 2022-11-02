@@ -24,8 +24,8 @@
 }
 
 *{
-    box-sizing: border-box;
-    /* border: green 1px solid; */
+    /* box-sizing: border-box;
+    border: green 1px solid; */
 }
 
 body{
@@ -90,6 +90,7 @@ div>span{
 .price{
     font-size: 350px;
     font-weight: bold;
+    margin-top: -30px;
 }
 #slash{
     font-weight: 100;
@@ -130,7 +131,7 @@ div>p{
 
 #petro-puck{
     width: 340px;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
     margin-right: 100px;
 
 }
@@ -164,26 +165,26 @@ section>span{
     animation-duration: 7s;
     animation-name: swing-on-screen;
     animation-iteration-count: infinite;
-    animation-direction: mormal;
+    animation-direction: alternate;
     animation-delay: 50ms;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(.54,.07,.3,1.01);
 }
 #right-image{
     animation-duration: 7s;
     animation-name: swing-on-screen;
     animation-iteration-count: infinite;
-    animation-direction: normal;
+    animation-direction: alternate;
     animation-delay: 250ms;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(.54,.07,.3,1.01);
 }
 
 #center-image{
     animation-duration: 7s;
     animation-name: swing-on-screen;
     animation-iteration-count: infinite;
-    animation-direction:  normal;
+    animation-direction:  alternate;
     animation-delay: 150ms;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: cubic-bezier(.54,.07,.3,1.01);
 }
 
 @keyframes swing-on-screen {
@@ -191,16 +192,7 @@ section>span{
         transform: translate(-150px, 1200px)rotate(90deg);;
         
     }
-    10%{
-        transform: translate(-30px, -95px )rotate(-10deg);;
-    }
-    14%{transform: translate(-12px, 60px)rotate(3deg)
-        
-    }
-    24%{transform: translate(-3px, -10px)rotate(-1deg)
-        
-    }
-    28%{transform: translate(0px, 0 )rotate(0deg)
+    18%{transform: translate(0px, 0 )rotate(0deg)
         
     }
 
@@ -210,17 +202,87 @@ section>span{
 }
 
 .disclaimer{
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-name: fade-on;
     animation-iteration-count: infinite;
-    animation-direction: normal;
+    animation-direction: alternate;
     animation-delay: 1s;
     animation-timing-function: ease-in-out;
+
 }
+
 
 @keyframes fade-on {
     from{
-        transform: translate(-2000px,0);
+        opacity: 0;
+        
+    }
+    50%{
+        opacity: 1;
+    }
+    to {
+
+    }
+}
+
+
+#slash{
+    animation-duration: 3s;
+    animation-name: slide-on-slash;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+}
+@keyframes slide-on-slash {
+    from{
+        transform: translate(-500px,0)rotate(-26deg);;
+        
+    }
+    30%{
+        transform: translate(-80px, 0 )rotate(-26deg);;
+    }
+    50%{
+        transform: translate(0, 0 )rotate(-12deg);;
+    }
+    to {
+
+    }
+}
+
+.money-value{
+    animation-duration: 3s;
+    animation-name: slide-on-price;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-delay: 00ms;
+    display: inline-block;
+}
+
+#money-sign{
+    animation-duration: 3s;
+    animation-name: slide-on-price;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-delay: 100ms;
+    display: inline-block;
+}
+.product-number{
+    animation-duration: 3s;
+    animation-name: slide-on-price;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    display: inline-block;
+}
+
+
+
+@keyframes slide-on-price {
+    from{
+        transform: translate(-1000px,0);
         
     }
     50%{
