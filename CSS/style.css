@@ -404,7 +404,7 @@ p{
 #petro-puck{
     animation-duration: 7s;
     animation-name: scale-up;
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
 
