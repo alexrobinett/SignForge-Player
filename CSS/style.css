@@ -170,15 +170,16 @@ div>p{
     grid-column: 1/2;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    width: 90%;
+    margin: 20px; 
 }
 
 .points-circle-container{
-    width: 100%;
-    height: 100%;
+    width: 90%;
     margin-bottom: -20px;
     margin-right: 100px;
     grid-column: 2/3;
-    border: black 1px solid;
+    /* border: black 1px solid; */
 
 }
 
@@ -199,8 +200,8 @@ div>p{
 
 .circle-background-white{
     background-color: rgb(255, 255, 255);
-    width: 82%;
-    height: 82%;
+    width: 85%;
+    height: 85%;
     border-radius: 100%;
     z-index: 0;
     grid-column: 1/2;
@@ -210,7 +211,6 @@ div>p{
 }
 
 .circle-border{
-    display: hidden;
     opacity: 0%;
     width: 100%;
     grid-column: 1/2;
@@ -226,6 +226,7 @@ div>p{
     top: 110px;
     grid-column: 1/2;
     grid-row: 1/2;
+    z-index: 4;
 }
 
 .text-container{
@@ -238,25 +239,56 @@ div>p{
     justify-content: center;
     align-items: center;
     z-index: 3;
+    width: 80%;
 }
 
 .top-text{
     font-family: 'gibson';
     font-weight: 500;
-    font-size: 25px;
+    font-size: 32px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .points{
     font-family: 'gibson';
     font-weight: 700;
-    font-size: 60px;
+    font-size: 70px;
+    padding:  0px;
+    margin-bottom: -5px;
 }
 
 .bottom-text{
     font-family: 'gibson';
-    font-weight: 500;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0px;
+    padding: 0px;
+
 }
+
+.pp-mask{
+    display: hidden;
+    position: relative;
+    left: 50px;
+    bottom: 115px;
+    z-index: 1;
+    scale: 233%;
+}
+
+/* .circle-background-white-top{
+    background-color: rgb(255, 255, 255);
+    width: 85%;
+    height: 85%;
+    border-radius: 100%;
+    z-index: 4;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    border: green solid 4px;
+} */
+
 /* disclaimer */
 
 .disclaimer-container{
@@ -265,6 +297,9 @@ div>p{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    bottom: 130px;
+    z-index: 10;
 }
 
 .disclaimer{
@@ -408,7 +443,7 @@ section>span{
         transform: translate(-1000px,0);
         
     }
-    22%{
+    23%{
         transform: translate(0, 0 );
     }
     to {
@@ -507,28 +542,146 @@ section>span{
 
 
 
-#petro-puck{
+
+/* .circle-border{
     animation-duration: 7s;
-    animation-name: scale-up;
+    animation-name: fade-on-circle-border;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.64,0,.54,1);
 }
 
-@keyframes scale-up {
+@keyframes fade-on-circle-border {
     from{
-        transform: scale(0,0);
+        opacity: 0;
+        
     }
     40%{
-        transform: scale(0 , 0)
+        opacity: 0;
     }
     50%{
-        transform: scale(1.3 , 1.3)
+        opacity: 1;
     }
-    53% {
-        transform: scale(1,1);
+    55%{
+        opacity: 0;
+
+    }
+    to {
+
+    }
+} */
+
+.circle-background-white{
+    animation-duration: 7s;
+    animation-name: slide-up-white;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.64,0,.54,1);
+}
+
+@keyframes slide-up-white {
+    from{
+        transform: translate(0px,210px);
+    }
+    42%{
+        transform: translate(0px,210px)
+    }
+    49% {
+        transform: translate(0px,-0px)
     }
     to {
 
     }
 }
 
+
+.circle-background-red{
+    animation-duration: 7s;
+    animation-name: slide-up-red;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.64,0,.54,1);
+}
+
+@keyframes slide-up-red {
+    from{
+        transform: translate(0px,230px);
+    }
+    40%{
+        transform: translate(0px,230px)
+    }
+    47% {
+        transform: translate(0px,-0px)
+    }
+    to {
+
+    }
+}
+
+
+.text-container{
+    animation-duration: 7s;
+    animation-name: fade-on-pp-text;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes fade-on-pp-text {
+    from{
+        opacity: 0;
+    }
+    47%{
+        opacity: 0;
+    }
+    57% {
+        opacity: 1;
+    }
+    to {
+
+    }
+}
+
+.points-logo{
+    animation-duration: 7s;
+    animation-name: scale-pp-logo;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.64,0,.54,1);
+}
+
+@keyframes scale-pp-logo {
+    from{
+        transform: scale(0,0);
+    }
+    42%{
+        transform: scale(0,0); 
+    }
+    49% {
+        transform: scale(1.4,1.4)
+    }
+    54% {
+        transform: scale(1.0,1.0)
+    }
+    to {
+        ransform: scale(1.0,1.0)
+    }
+}
+
+
+/* .circle-background-white-top{
+    animation-duration: 7s;
+    animation-name: slide-up-white-top;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.64,0,.54,1);
+}
+
+@keyframes slide-up-white-top {
+    from{
+        transform: translate(0px,0px);
+    }
+    44%{
+        transform: translate(0px,0px)
+    }
+    55% {
+        transform: translate(0px,-210px)
+    }
+    to {
+        transform: translate(0px,-210px)
+    }
+} */
