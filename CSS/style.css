@@ -103,7 +103,7 @@ img{
 .mask{
     position: absolute;
     top: 50px;
-    left: -145px;
+    left: -135px;
     display: block;
     width: 520px;
     z-index: 0;
@@ -211,6 +211,7 @@ div>p{
 }
 
 .circle-border{
+    visibility:hidden;
     opacity: 0%;
     width: 100%;
     grid-column: 1/2;
@@ -268,12 +269,12 @@ div>p{
 }
 
 .pp-mask{
-    display: hidden;
     position: relative;
-    left: 50px;
-    bottom: 115px;
+    width: 130%;
+    right: 36px;
+    bottom: 280px;
     z-index: 1;
-    scale: 233%;
+    scale: 260%;
 }
 
 /* .circle-background-white-top{
@@ -298,7 +299,7 @@ div>p{
     flex-direction: column;
     justify-content: center;
     position: relative;
-    bottom: 130px;
+    bottom: 470px;
     z-index: 10;
 }
 
@@ -659,7 +660,7 @@ section>span{
         transform: scale(1.0,1.0)
     }
     to {
-        ransform: scale(1.0,1.0)
+        transform: scale(1.0,1.0)
     }
 }
 
@@ -685,3 +686,4 @@ section>span{
         transform: translate(0px,-210px)
     }
 } */
+
