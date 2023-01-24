@@ -271,10 +271,10 @@ div>p{
 .pp-mask{
     position: relative;
     width: 130%;
-    right: 36px;
+    right: 32px;
     bottom: 280px;
     z-index: 1;
-    scale: 260%;
+    scale: 262%;
 }
 
 /* .circle-background-white-top{
