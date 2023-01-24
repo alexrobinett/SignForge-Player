@@ -662,3 +662,73 @@ section>span{
         ransform: scale(1.0,1.0)
     }
 }
+
+
+/* .circle-background-white-top{
+    animation-duration: 7s;
+    animation-name: slide-up-white-top;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.64,0,.54,1);
+}
+
+@keyframes slide-up-white-top {
+    from{
+        transform: translate(0px,0px);
+    }
+    44%{
+        transform: translate(0px,0px)
+    }
+    55% {
+        transform: translate(0px,-210px)
+    }
+    to {
+        transform: translate(0px,-210px)
+    }
+} */
+
+.text-container{
+    animation-duration: 7s;
+    animation-name: fade-on-pp-text;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes fade-on-pp-text {
+    from{
+        opacity: 0;
+    }
+    47%{
+        opacity: 0;
+    }
+    57% {
+        opacity: 1;
+    }
+    to {
+
+    }
+}
+
+.points-logo{
+    animation-duration: 7s;
+    animation-name: scale-pp-logo;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.64,0,.54,1);
+}
+
+@keyframes scale-pp-logo {
+    from{
+        transform: scale(0,0);
+    }
+    42%{
+        transform: scale(0,0); 
+    }
+    49% {
+        transform: scale(1.4,1.4)
+    }
+    54% {
+        transform: scale(1.0,1.0)
+    }
+    to {
+        ransform: scale(1.0,1.0)
+    }
+}
