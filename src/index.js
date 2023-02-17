@@ -1,4 +1,14 @@
 
+import './CSS/style.css'
+
+import priceMask from './images/price-mask.svg'
+import circleRing from  './images/circle.svg'
+import imageMask from './images/final-mask-petro-points.png'
+
+import imageOne from './images/drinks/blue-drink.png'
+import imageTwo from './images/drinks/green-drink.png'
+import imageThree from './images/drinks/red-drink.png'
+import petroLogo from './images/petro_points_black.png'
 
 const body = document.querySelector("body");
 
@@ -18,7 +28,7 @@ const promoContainer = document.createElement("section");
 promoContainer.classList.add("promo-container");
 
 const img = document.createElement("img");
-img.src = "images/price-mask.svg";
+img.src = priceMask;
 img.alt = "";
 img.classList.add("mask");
 promoContainer.appendChild(img);
@@ -82,7 +92,7 @@ containerCircle.classList.add("container-circle");
 pointsCircleContainer.appendChild(containerCircle);
 
 const ppMask = document.createElement("img");
-ppMask.src = "images/final-mask-petro-points.png";
+ppMask.src = imageMask ;
 ppMask.alt = "";
 ppMask.classList.add("pp-mask");
 containerCircle.appendChild(ppMask);
@@ -100,7 +110,7 @@ circleBackgroundWhiteTop.classList.add("circle-background-white-top");
 containerCircle.appendChild(circleBackgroundWhiteTop);
 
 const circleBorder = document.createElement("img");
-circleBorder.src = "images/circle.svg";
+circleBorder.src = circleRing;
 circleBorder.alt = "";
 circleBorder.classList.add("circle-border");
 containerCircle.appendChild(circleBorder);
@@ -125,7 +135,7 @@ bottomText.textContent = "Points";
 textContainer.appendChild(bottomText);
 
 const pointsLogo = document.createElement("img");
-pointsLogo.src = "images/petro_points_black.png";
+pointsLogo.src = petroLogo ;
 pointsLogo.alt = "";
 pointsLogo.classList.add("points-logo");
 containerCircle.appendChild(pointsLogo);
@@ -160,19 +170,19 @@ const productImages = document.createElement("section");
 productImages.classList.add("product-images");
 
 const leftImage = document.createElement("img");
-leftImage.src = "images/drinks/blue-drink.png";
+leftImage.src = imageOne;
 leftImage.alt = "blue powerade";
 leftImage.id = "left-image";
 productImages.appendChild(leftImage);
 
 const centerImage = document.createElement("img");
-centerImage.src = "images/drinks/gree-drink.png";
+centerImage.src = imageTwo;
 centerImage.alt = "green powerade";
 centerImage.id = "center-image";
 productImages.appendChild(centerImage);
 
 const rightImage = document.createElement("img");
-rightImage.src = "images/drinks/red-drink.png";
+rightImage.src = imageThree;
 rightImage.alt = "red Powerade";
 rightImage.id = "right-image";
 productImages.appendChild(rightImage);
