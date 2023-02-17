@@ -1,26 +1,33 @@
 @font-face {
     font-family: 'gibson';
-    src: url(Gibson-Bold.otf)('opentype');
-    font-weight: bold;
+    font-style: bold;
+    font-weight: 700;
+    src: url(./Gibson-Bold.otf) format('opentype');
+  
     
 }
 @font-face {
     font-family: "gibson";
-    src: url(Gibson-Regular.otf)('opentype');
+    font-style: normal;
     font-weight: 400;
+    src: url(./Gibson-Regular.otf) format('opentype');
+    
     
 }
 @font-face {
     font-family: "gibson";
-    src: url(Gibson-Light.otf)('opentype');
+    font-style: light;
     font-weight: 100;
+    src: url(./Gibson-Light.otf) format('opentype');
+    
     
 }
 
 @font-face {
     font-family: "gibson";
-    src: url(Gibson-SemiBold.otf)('opentype');
     font-weight: 600;
+    src: url(./Gibson-SemiBold.otf) format('opentype');
+    
     
 }
 
@@ -269,13 +276,14 @@ div>p{
 }
 
 .pp-mask{
+    display: hidden;
     position: relative;
-    width: 130%;
-    right: 32px;
-    bottom: 280px;
+    left: 50px;
+    bottom: 115px;
     z-index: 1;
-    scale: 262%;
+    scale: 233%;
 }
+
 
 /* .circle-background-white-top{
     background-color: rgb(255, 255, 255);
@@ -299,7 +307,7 @@ div>p{
     flex-direction: column;
     justify-content: center;
     position: relative;
-    bottom: 470px;
+    bottom: 120px;
     z-index: 10;
 }
 
