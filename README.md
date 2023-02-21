@@ -1,6 +1,6 @@
 # Dynamic Digital Signage Ad
 
-The Dynamic Digital Signage Ad is designed for digital signage players like BrightSign. Built using JavaScript and CSS animations, it is designed to be placed behind or above the counter at a C-Store, and can be updated with promotions and calls-to-action using APIs. The goal of this preoject was to match my animation skills in after effects with CSS.
+The Dynamic Digital Signage Ad is designed for digital signage players like BrightSign. Built using JavaScript and CSS animations, it is designed to be placed behind or above the counter at a C-Store, and can be updated with promotions and calls-to-action using APIs. The goal of this project was to match my animation skills in after effects with CSS.
 
 (Chrome Recomended)Link to project: https://alexrobinett.github.io/C-Store-Digital-Ad-Spot/
 
