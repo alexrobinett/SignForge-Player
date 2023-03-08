@@ -62,7 +62,7 @@ function renderMessage(messageData){
     
     const dealCopy = document.createElement("span");
     dealCopy.classList.add("deal-copy");
-    dealCopy.textContent = "Buy Any 2";
+    dealCopy.textContent = `${messageData.promo}`;
     priceInfo.appendChild(dealCopy);
     
     const lineOne = document.createElement("p");
@@ -148,11 +148,13 @@ function renderMessage(messageData){
     
     const disclaimer1 = document.createElement("span");
     disclaimer1.classList.add("disclaimer");
+    disclaimer1.classList.add("disclaimer-one");
     disclaimer1.textContent =  `${messageData.disclaimerLineOne}`;
     disclaimerContainer.appendChild(disclaimer1);
     
     const disclaimer2 = document.createElement("span");
     disclaimer2.classList.add("disclaimer");
+    disclaimer2.classList.add("disclaimer-two");
     disclaimer2.textContent =  `${messageData.disclaimerLineTwo}`;
     disclaimerContainer.appendChild(disclaimer2);
     
@@ -190,4 +192,71 @@ function renderMessage(messageData){
 
 }
 
-export{renderMessage}
+
+
+
+
+
+
+
+
+
+function updateMessage(messageData){
+ 
+
+
+    
+    const productNumber = document.querySelector(".product-number");
+    productNumber.textContent = `${messageData.quantity}`;
+    
+    
+    const moneyValue = document.querySelector("#money-value");
+    moneyValue.textContent = `${messageData.price}`;
+    
+    const dealCopy = document.querySelector(".deal-copy");
+    dealCopy.textContent = `${messageData.promo}`;
+
+    
+    const lineOne = document.querySelector(".line-one");
+    lineOne.textContent = `${messageData.promoLineOne}`;
+    
+    const lineTwo = document.querySelector(".line-two");
+    lineTwo.textContent = `${messageData.promoLineTwo}`;
+    
+    
+    // Petro Points Circle
+    
+    
+    
+    const points = document.querySelector(".points");
+    points.textContent = `${messageData.points}`;
+    
+    
+    // Disclaimer
+    
+
+    
+    const disclaimer1 = document.querySelector(".disclaimer-one");
+    disclaimer1.textContent =  `${messageData.disclaimerLineOne}`;
+    
+    const disclaimer2 = document.querySelector(".disclaimer-two");
+    disclaimer2.textContent =  `${messageData.disclaimerLineTwo}`;
+    
+
+    
+    // product Images
+    
+    
+    const leftImage = document.querySelector("#left-image");
+    leftImage.src = `${messageData.imageOne}`;
+    
+    const centerImage = document.querySelector("#center-image");
+    centerImage.src = `${messageData.imageTwo}`;
+    
+    const rightImage = document.querySelector("#right-image");
+    rightImage.src = `${messageData.imageThree}`;
+    
+    
+}
+
+export{renderMessage,updateMessage}
