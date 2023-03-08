@@ -5,18 +5,6 @@ import './CSS/style.css'
 import { renderMessage, updateMessage } from './renderDOM'
 
 
-// const messageData = await getData()
-
-
-// async function getData(){
-//     const response = await fetch("https://signage-api-production.up.railway.app/messages/640566ca7ca1015497759ee3")
-//     const data = await response.json();
-//     console.log(data)
-//     return data
-// }
-
-// takes in API data and builds message. Currently hard coded for demo.
-
 async function setupMessage(){
     try{
         let response = await fetch("https://signage-api-production.up.railway.app/messages/640566ca7ca1015497759ee3")

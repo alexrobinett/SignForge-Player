@@ -87,15 +87,16 @@ img{
 #center-image{
     z-index: 1;
     position: absolute;
-    left: 190px;
+    left: 196px;
     top: -30px;
-    width: 58%;
+    max-width: 60%;
 }
 
 #left-image{
     z-index: -1;
     position: absolute;
     top: -30px;
+    max-width: 55%;
 }
 
 #right-image{
@@ -103,6 +104,7 @@ img{
     position: absolute;
     left: 420px;
     top: -30px;
+    max-width: 55%;
 
 }
 
