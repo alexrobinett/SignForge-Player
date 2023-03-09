@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   mode: 'development',
   output: {
     filename: 'main.js',
@@ -9,6 +9,9 @@ module.exports = {
   },
   experiments: {
     topLevelAwait: true,
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
         rules: [
@@ -26,11 +29,12 @@ module.exports = {
             type: 'asset/resource',
           },
           {
-            test: /\.js$/,
-            enforce: "pre",
-            use: ["source-map-loader"],
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
           },
      ], 
     },
+
       
 };

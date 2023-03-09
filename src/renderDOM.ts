@@ -1,15 +1,14 @@
-import priceMask from './images/price-mask.svg'
-import circleRing from  './images/circle.svg'
-import imageMask from './images/final-mask-petro-points.png'
-import petroLogo from './images/petro_points_black.png'
+const priceMask = require('./images/price-mask.svg') 
+const circleRing = require('./images/circle.svg')
+const imageMask = require( './images/final-mask-petro-points.png')
+const petroLogo = require('./images/petro_points_black.png')
 
-import { setupMessage } from '.'
 
-function renderMessage(messageData){
+function renderMessage(messageData:any){
 
     console.log(messageData)
 
-    const body = document.querySelector("body");
+    const body: HTMLElement | null = document.querySelector("body")!;
 
     // On off Transition
     
@@ -201,26 +200,26 @@ function renderMessage(messageData){
 
 
 
-function updateMessage(messageData){
+function updateMessage(messageData:any){
  
 
 
     
-    const productNumber = document.querySelector(".product-number");
+    const productNumber: HTMLElement = document.querySelector(".product-number")!;
     productNumber.textContent = `${messageData.quantity}`;
     
     
-    const moneyValue = document.querySelector("#money-value");
+    const moneyValue: HTMLElement = document.querySelector("#money-value")!;
     moneyValue.textContent = `${messageData.price}`;
     
-    const dealCopy = document.querySelector(".deal-copy");
+    const dealCopy: HTMLElement = document.querySelector(".deal-copy")!;
     dealCopy.textContent = `${messageData.promo}`;
 
     
-    const lineOne = document.querySelector(".line-one");
+    const lineOne = document.querySelector(".line-one")!;
     lineOne.textContent = `${messageData.promoLineOne}`;
     
-    const lineTwo = document.querySelector(".line-two");
+    const lineTwo = document.querySelector(".line-two")!;
     lineTwo.textContent = `${messageData.promoLineTwo}`;
     
     
@@ -228,7 +227,7 @@ function updateMessage(messageData){
     
     
     
-    const points = document.querySelector(".points");
+    const points: HTMLElement = document.querySelector(".points")!;
     points.textContent = `${messageData.points}`;
     
     
@@ -236,10 +235,10 @@ function updateMessage(messageData){
     
 
     
-    const disclaimer1 = document.querySelector(".disclaimer-one");
+    const disclaimer1: HTMLElement = document.querySelector(".disclaimer-one")!;
     disclaimer1.textContent =  `${messageData.disclaimerLineOne}`;
     
-    const disclaimer2 = document.querySelector(".disclaimer-two");
+    const disclaimer2: HTMLElement = document.querySelector(".disclaimer-two")!;
     disclaimer2.textContent =  `${messageData.disclaimerLineTwo}`;
     
 
@@ -247,13 +246,13 @@ function updateMessage(messageData){
     // product Images
     
     
-    const leftImage = document.querySelector("#left-image");
+    const leftImage: HTMLImageElement= document.querySelector("#left-image")!;
     leftImage.src = `${messageData.imageOne}`;
     
-    const centerImage = document.querySelector("#center-image");
+    const centerImage: HTMLImageElement = document.querySelector("#center-image")!;
     centerImage.src = `${messageData.imageTwo}`;
     
-    const rightImage = document.querySelector("#right-image");
+    const rightImage: HTMLImageElement = document.querySelector("#right-image")!;
     rightImage.src = `${messageData.imageThree}`;
     
     

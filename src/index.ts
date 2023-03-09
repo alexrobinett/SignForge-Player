@@ -4,13 +4,35 @@ import './CSS/style.css'
 
 import { renderMessage, updateMessage } from './renderDOM'
 
+async function fetchData(){
+    try{
+    let response = await fetch("https://signage-api-production.up.railway.app/messages/640566ca7ca1015497759ee3")
+    let data = await response.json();
+    console.log(data)
+    return data
+    }catch (error){
+    console.log(error)
+    }
+
+}
 
 async function setupMessage(){
-    try{
-        let response = await fetch("https://signage-api-production.up.railway.app/messages/640566ca7ca1015497759ee3")
-        let data = await response.json();
-        console.log(data)
-        let message = {}
+
+       let data = await fetchData()
+
+       let message = {
+        imageOne: String,
+        imageTwo: String,
+        imageThree: String,
+        price: String,
+        quantity: String,
+        points: String,
+        promo: String,
+        promoLineOne: String,
+        promoLineTwo: String,
+        disclaimerLineOne: String,
+        disclaimerLineTwo: String,
+    }
     
         message.imageOne = data.imageOne
         message.imageTwo = data.imageTwo
@@ -25,11 +47,6 @@ async function setupMessage(){
         message.disclaimerLineTwo = data.disclaimerLineTwo
     
         return message
-    }catch (error){
-        console.log(error)
-    }
-  
-
 
 }
 
