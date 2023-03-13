@@ -6,7 +6,7 @@ import { renderMessage, updateMessage } from './renderDOM'
 
 async function fetchData(){
     try{
-    let response = await fetch("http://127.0.0.1:3000/player/playlist?id=640d61317e37b79561292f46")
+    let response = await fetch("https://signage-api-production.up.railway.app/player/playlist?id=640d61317e37b79561292f46")
     let data = await response.json();
     console.log(data)
     return data

@@ -6,7 +6,6 @@ const petroLogo = require('./images/petro_points_black.png')
 
 function renderMessage(messageData:any){
 
-    console.log(messageData)
 
     const body: HTMLElement | null = document.querySelector("body")!;
 
