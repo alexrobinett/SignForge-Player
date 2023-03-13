@@ -117,11 +117,11 @@ img{
 .mask{
     position: absolute;
     top: 50px;
-    left: -146px;
+    left: -143px;
     display: block;
     width: 520px;
     z-index: 0;
-    rotate: 0deg;
+    rotate: 0.05deg;
     /* border: solid black 1px; */
 }
 .price-info{
