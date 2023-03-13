@@ -6,7 +6,7 @@ import { renderMessage, updateMessage } from './renderDOM'
 
 async function fetchData(){
     try{
-    let response = await fetch("https://signage-api-production.up.railway.app/messages/640566ca7ca1015497759ee3")
+    let response = await fetch("http://127.0.0.1:3000/player/playlist?id=640d61317e37b79561292f46")
     let data = await response.json();
     console.log(data)
     return data
@@ -16,9 +16,17 @@ async function fetchData(){
 
 }
 
-async function setupMessage(){
+let playlist = await fetchData()
 
-       let data = await fetchData()
+setInterval(async() => {
+    playlist = await fetchData()
+} ,8000 * playlist.length)
+
+ 
+
+
+async function setupMessage(data: { imageOne: StringConstructor; imageTwo: StringConstructor; imageThree: StringConstructor; price: StringConstructor; quantity: StringConstructor; points: StringConstructor; promo: StringConstructor; promoLineOne: StringConstructor; promoLineTwo: StringConstructor; disclaimerLineOne: StringConstructor; disclaimerLineTwo: StringConstructor; }){
+
 
        let message = {
         imageOne: String,
@@ -34,6 +42,7 @@ async function setupMessage(){
         disclaimerLineTwo: String,
     }
     
+    
         message.imageOne = data.imageOne
         message.imageTwo = data.imageTwo
         message.imageThree = data.imageThree
@@ -46,15 +55,20 @@ async function setupMessage(){
         message.disclaimerLineOne = data.disclaimerLineOne
         message.disclaimerLineTwo = data.disclaimerLineTwo
     
-        return message
+        
 
 }
 
+renderMessage(playlist[0])
 
-renderMessage(await setupMessage())
-setInterval(async () => {
-    updateMessage(await setupMessage())
-}, 70000);
+let index: number  = 1
+        setInterval(() => {
+           updateMessage(playlist[index])
+           index = (index + 1) % playlist.length
+          }, 8000);
+
+console.log(playlist)
 
 
 export{setupMessage}
+

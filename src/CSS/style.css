@@ -51,7 +51,7 @@ body{
 
 .fade-on{
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,38,38,1) 90%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 85%, rgba(255,255,255,0) 100%);
     height: 1080px;
     width: 4000px;
     position: absolute;
@@ -61,7 +61,7 @@ body{
 }
 .fade-off{
     background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(38,38,38,1) 10%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(10,10,10,1) 15%, rgba(0,0,0,1) 100%);
     height: 1080px;
     width: 4000px;
     position: absolute;
@@ -329,14 +329,14 @@ section>span{
 /* Anitmations */
 
 #left-image{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: swing-on-screen;
     animation-iteration-count: infinite;
     animation-delay: 50ms;
     animation-timing-function: cubic-bezier(.38,0,.29,1);
 }
 #right-image{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: swing-on-screen;
     animation-iteration-count: infinite;
     animation-delay: 250ms;
@@ -344,7 +344,7 @@ section>span{
 }
 
 #center-image{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: swing-on-screen;
     animation-iteration-count: infinite;
     animation-delay: 150ms;
@@ -369,7 +369,7 @@ section>span{
 }
 
 .disclaimer{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: fade-on;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -379,7 +379,7 @@ section>span{
     animation-name: fade-on;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    animation-duration: 7s;
+    animation-duration: 8s;
     
 }
 
@@ -401,7 +401,7 @@ section>span{
 
 
 #slash{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-slash;
     animation-iteration-count: infinite;
     animation-delay: 170ms;
@@ -422,7 +422,7 @@ section>span{
 
 
 #money-value{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-price;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -431,7 +431,7 @@ section>span{
 }
 
 #money-sign{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-price;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -439,7 +439,7 @@ section>span{
     display: inline-block;
 }
 .product-number{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-price;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -463,14 +463,14 @@ section>span{
 }
 
 .deal-copy{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-text;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     display: inline-block;
 }
 .line-one{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-text;
     animation-delay: 125ms;
     animation-iteration-count: infinite;
@@ -480,7 +480,7 @@ section>span{
 
 
 .line-two{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-text;
     animation-iteration-count: infinite;
     animation-delay: 250ms;
@@ -506,7 +506,7 @@ section>span{
 }
 
 .fade-on{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-on-grad;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -514,7 +514,7 @@ section>span{
 
 @keyframes slide-on-grad {
     from{
-        transform: translate(400,0);
+        transform: translate(500,0);
         
     }
     15%{
@@ -527,7 +527,7 @@ section>span{
 }
 
 .fade-off{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-off-grad;
     animation-iteration-count: infinite;
 
@@ -544,7 +544,7 @@ section>span{
         transform: translate(4000px, 0 );
     }
     to {
-        transform: translate(-500px, 0 )
+        transform: translate(-600px, 0 )
 
     }
 }
@@ -555,7 +555,7 @@ section>span{
 
 
 /* .circle-border{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: fade-on-circle-border;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.64,0,.54,1);
@@ -582,7 +582,7 @@ section>span{
 } */
 
 .circle-background-white{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-up-white;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.64,0,.54,1);
@@ -605,7 +605,7 @@ section>span{
 
 
 .circle-background-red{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-up-red;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.64,0,.54,1);
@@ -628,7 +628,7 @@ section>span{
 
 
 .text-container{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: fade-on-pp-text;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -650,7 +650,7 @@ section>span{
 }
 
 .points-logo{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: scale-pp-logo;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.64,0,.54,1);
@@ -676,7 +676,7 @@ section>span{
 
 
 /* .circle-background-white-top{
-    animation-duration: 7s;
+    animation-duration: 8s;
     animation-name: slide-up-white-top;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(.64,0,.54,1);

@@ -159,7 +159,7 @@ function renderMessage(messageData:any){
     
     const tradeMark = document.createElement("span");
     tradeMark.classList.add("trade-mark");
-    tradeMark.textContent = "™Trademark of Suncor Energy Inc. Used under licence.";
+    tradeMark.textContent = "";
     disclaimerContainer.appendChild(tradeMark);
     
     body.appendChild(disclaimerContainer);
