@@ -31,7 +31,13 @@
     
 }
 
-
+html {
+    cursor: none;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
 /* *{
     box-sizing: border-box;
