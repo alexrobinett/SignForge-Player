@@ -8,7 +8,6 @@ async function fetchData(){
     try{
     let response = await fetch("https://signage-api-production.up.railway.app/player/playlist?id=641be89a29d1c67ec2d2f99c")
     let data = await response.json();
-    console.log(data)
     return data
     }catch (error){
     console.log(error)
@@ -67,7 +66,6 @@ let index: number  = 1
            index = (index + 1) % playlist.length
           }, 8000);
 
-console.log(playlist)
 
 
 export{setupMessage}
