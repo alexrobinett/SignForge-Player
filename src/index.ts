@@ -1,72 +1,75 @@
+import './CSS/style.css';
+import { renderMessage, updateMessage } from './renderDOM';
 
-import './CSS/style.css'
-
-
-import { renderMessage, updateMessage } from './renderDOM'
-
-async function fetchData(){
-    try{
-    let response = await fetch("https://signage-api-production.up.railway.app/player/playlist?id=641be89a29d1c67ec2d2f99c")
-    let data = await response.json();
-    return data
-    }catch (error){
-    console.log(error)
-    }
-
+interface MessageData {
+  imageOne: string;
+  imageTwo: string;
+  imageThree: string;
+  price: string;
+  quantity: string;
+  points: string;
+  promo: string;
+  promoLineOne: string;
+  promoLineTwo: string;
+  disclaimerLineOne: string;
+  disclaimerLineTwo: string;
 }
 
-let playlist = await fetchData()
+async function main(): Promise<void> {
+  let playerId = localStorage.getItem('playerId');
 
-setInterval(async() => {
-    playlist = await fetchData()
-} ,8000 * playlist.length)
+  while (!playerId) {
+    playerId = prompt('Please enter the player ID:');
 
- 
-
-
-async function setupMessage(data: { imageOne: StringConstructor; imageTwo: StringConstructor; imageThree: StringConstructor; price: StringConstructor; quantity: StringConstructor; points: StringConstructor; promo: StringConstructor; promoLineOne: StringConstructor; promoLineTwo: StringConstructor; disclaimerLineOne: StringConstructor; disclaimerLineTwo: StringConstructor; }){
-
-
-       let message = {
-        imageOne: String,
-        imageTwo: String,
-        imageThree: String,
-        price: String,
-        quantity: String,
-        points: String,
-        promo: String,
-        promoLineOne: String,
-        promoLineTwo: String,
-        disclaimerLineOne: String,
-        disclaimerLineTwo: String,
+    if (playerId) {
+      localStorage.setItem('playerId', playerId);
+    } else {
+      alert('Player ID is required to continue');
+      return;
     }
-    
-    
-        message.imageOne = data.imageOne
-        message.imageTwo = data.imageTwo
-        message.imageThree = data.imageThree
-        message.price = data.price
-        message.quantity = data.quantity
-        message.points = data.points
-        message.promo = data.promo
-        message.promoLineOne = data.promoLineOne
-        message.promoLineTwo = data.promoLineTwo
-        message.disclaimerLineOne = data.disclaimerLineOne
-        message.disclaimerLineTwo = data.disclaimerLineTwo
-    
-        
+  }
 
+  async function fetchData(): Promise<MessageData[]> {
+    try {
+      const response = await fetch(`https://signage-api-production.up.railway.app/player/playlist?id=${playerId}`);
+      if (!response.ok) {
+        throw new Error('Invalid player ID');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  let playlist: MessageData[];
+  try {
+    playlist = await fetchData();
+  } catch (error) {
+    alert('Invalid player ID. Please enter a valid player ID.');
+    localStorage.removeItem('playerId');
+    return main();
+  }
+
+  setInterval(async () => {
+    try {
+      playlist = await fetchData();
+    } catch (error) {
+      console.log('Error fetching data:', error);
+    }
+  }, 8000 * playlist.length);
+
+  async function setupMessage(data: MessageData): Promise<void> {
+    // ...
+  }
+
+  renderMessage(playlist[0]);
+
+  let index = 1;
+  setInterval(() => {
+    updateMessage(playlist[index]);
+    index = (index + 1) % playlist.length;
+  }, 8000);
 }
 
-renderMessage(playlist[0])
-
-let index: number  = 1
-        setInterval(() => {
-           updateMessage(playlist[index])
-           index = (index + 1) % playlist.length
-          }, 8000);
-
-
-
-export{setupMessage}
-
+main().catch((error) => console.error(error));

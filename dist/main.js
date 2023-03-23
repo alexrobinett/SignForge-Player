@@ -124,9 +124,9 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"setupMessage\": () => (/* binding */ setupMessage)\n/* harmony export */ });\n/* harmony import */ var _CSS_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CSS/style.css */ \"./src/CSS/style.css\");\n/* harmony import */ var _renderDOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderDOM */ \"./src/renderDOM.ts\");\n\n\nasync function fetchData() {\n    try {\n        let response = await fetch(\"https://signage-api-production.up.railway.app/player/playlist?id=641be89a29d1c67ec2d2f99c\");\n        let data = await response.json();\n        return data;\n    }\n    catch (error) {\n        console.log(error);\n    }\n}\nlet playlist = await fetchData();\nsetInterval(async () => {\n    playlist = await fetchData();\n}, 8000 * playlist.length);\nasync function setupMessage(data) {\n    let message = {\n        imageOne: String,\n        imageTwo: String,\n        imageThree: String,\n        price: String,\n        quantity: String,\n        points: String,\n        promo: String,\n        promoLineOne: String,\n        promoLineTwo: String,\n        disclaimerLineOne: String,\n        disclaimerLineTwo: String,\n    };\n    message.imageOne = data.imageOne;\n    message.imageTwo = data.imageTwo;\n    message.imageThree = data.imageThree;\n    message.price = data.price;\n    message.quantity = data.quantity;\n    message.points = data.points;\n    message.promo = data.promo;\n    message.promoLineOne = data.promoLineOne;\n    message.promoLineTwo = data.promoLineTwo;\n    message.disclaimerLineOne = data.disclaimerLineOne;\n    message.disclaimerLineTwo = data.disclaimerLineTwo;\n}\n(0,_renderDOM__WEBPACK_IMPORTED_MODULE_1__.renderMessage)(playlist[0]);\nlet index = 1;\nsetInterval(() => {\n    (0,_renderDOM__WEBPACK_IMPORTED_MODULE_1__.updateMessage)(playlist[index]);\n    index = (index + 1) % playlist.length;\n}, 8000);\n\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://digital-sign-html-mesage/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _CSS_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CSS/style.css */ \"./src/CSS/style.css\");\n/* harmony import */ var _renderDOM__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderDOM */ \"./src/renderDOM.ts\");\n\n\nasync function main() {\n    let playerId = localStorage.getItem('playerId');\n    while (!playerId) {\n        playerId = prompt('Please enter the player ID:');\n        if (playerId) {\n            localStorage.setItem('playerId', playerId);\n        }\n        else {\n            alert('Player ID is required to continue');\n            return;\n        }\n    }\n    async function fetchData() {\n        try {\n            const response = await fetch(`https://signage-api-production.up.railway.app/player/playlist?id=${playerId}`);\n            if (!response.ok) {\n                throw new Error('Invalid player ID');\n            }\n            const data = await response.json();\n            return data;\n        }\n        catch (error) {\n            throw error;\n        }\n    }\n    let playlist;\n    try {\n        playlist = await fetchData();\n    }\n    catch (error) {\n        alert('Invalid player ID. Please enter a valid player ID.');\n        localStorage.removeItem('playerId');\n        return main();\n    }\n    setInterval(async () => {\n        try {\n            playlist = await fetchData();\n        }\n        catch (error) {\n            console.log('Error fetching data:', error);\n        }\n    }, 8000 * playlist.length);\n    async function setupMessage(data) {\n        // ...\n    }\n    (0,_renderDOM__WEBPACK_IMPORTED_MODULE_1__.renderMessage)(playlist[0]);\n    let index = 1;\n    setInterval(() => {\n        (0,_renderDOM__WEBPACK_IMPORTED_MODULE_1__.updateMessage)(playlist[index]);\n        index = (index + 1) % playlist.length;\n    }, 8000);\n}\nmain().catch((error) => console.error(error));\n\n\n//# sourceURL=webpack://digital-sign-html-mesage/./src/index.ts?");
 
 /***/ }),
 
@@ -250,75 +250,6 @@ eval("module.exports = __webpack_require__.p + \"bd374466be8a52088772.svg\";\n\n
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/async module */
-/******/ 	(() => {
-/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
-/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
-/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
-/******/ 		var resolveQueue = (queue) => {
-/******/ 			if(queue && !queue.d) {
-/******/ 				queue.d = 1;
-/******/ 				queue.forEach((fn) => (fn.r--));
-/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
-/******/ 			}
-/******/ 		}
-/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
-/******/ 			if(dep !== null && typeof dep === "object") {
-/******/ 				if(dep[webpackQueues]) return dep;
-/******/ 				if(dep.then) {
-/******/ 					var queue = [];
-/******/ 					queue.d = 0;
-/******/ 					dep.then((r) => {
-/******/ 						obj[webpackExports] = r;
-/******/ 						resolveQueue(queue);
-/******/ 					}, (e) => {
-/******/ 						obj[webpackError] = e;
-/******/ 						resolveQueue(queue);
-/******/ 					});
-/******/ 					var obj = {};
-/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
-/******/ 					return obj;
-/******/ 				}
-/******/ 			}
-/******/ 			var ret = {};
-/******/ 			ret[webpackQueues] = x => {};
-/******/ 			ret[webpackExports] = dep;
-/******/ 			return ret;
-/******/ 		}));
-/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
-/******/ 			var queue;
-/******/ 			hasAwait && ((queue = []).d = 1);
-/******/ 			var depQueues = new Set();
-/******/ 			var exports = module.exports;
-/******/ 			var currentDeps;
-/******/ 			var outerResolve;
-/******/ 			var reject;
-/******/ 			var promise = new Promise((resolve, rej) => {
-/******/ 				reject = rej;
-/******/ 				outerResolve = resolve;
-/******/ 			});
-/******/ 			promise[webpackExports] = exports;
-/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
-/******/ 			module.exports = promise;
-/******/ 			body((deps) => {
-/******/ 				currentDeps = wrapDeps(deps);
-/******/ 				var fn;
-/******/ 				var getResult = () => (currentDeps.map((d) => {
-/******/ 					if(d[webpackError]) throw d[webpackError];
-/******/ 					return d[webpackExports];
-/******/ 				}))
-/******/ 				var promise = new Promise((resolve) => {
-/******/ 					fn = () => (resolve(getResult));
-/******/ 					fn.r = 0;
-/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
-/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
-/******/ 				});
-/******/ 				return fn.r ? promise : getResult();
-/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
-/******/ 			queue && (queue.d = 0);
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
