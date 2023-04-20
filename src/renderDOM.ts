@@ -131,11 +131,11 @@ function renderMessage(messageData:any){
     bottomText.textContent = "Points";
     textContainer.appendChild(bottomText);
     
-    const pointsLogo = document.createElement("img");
-    pointsLogo.src = petroLogo ;
-    pointsLogo.alt = "";
-    pointsLogo.classList.add("points-logo");
-    containerCircle.appendChild(pointsLogo);
+    // const pointsLogo = document.createElement("img");
+    // pointsLogo.src = petroLogo ;
+    // pointsLogo.alt = "";
+    // pointsLogo.classList.add("points-logo");
+    // containerCircle.appendChild(pointsLogo);
     
     body.appendChild(pointsCircle);
     
