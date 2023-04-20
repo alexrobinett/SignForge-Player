@@ -13,6 +13,11 @@ interface MessageData {
   promoLineTwo: string;
   disclaimerLineOne: string;
   disclaimerLineTwo: string;
+  position: number
+}
+
+function sortPlaylistByPosition(playlist: MessageData[]): MessageData[] {
+  return playlist.sort((a, b) => a.position - b.position);
 }
 
 async function main(): Promise<void> {
@@ -45,6 +50,7 @@ async function main(): Promise<void> {
   let playlist: MessageData[];
   try {
     playlist = await fetchData();
+    playlist = sortPlaylistByPosition(playlist); 
   } catch (error) {
     alert('Invalid player ID. Please enter a valid player ID.');
     localStorage.removeItem('playerId');
@@ -54,14 +60,12 @@ async function main(): Promise<void> {
   setInterval(async () => {
     try {
       playlist = await fetchData();
+      playlist = sortPlaylistByPosition(playlist);
     } catch (error) {
       console.log('Error fetching data:', error);
     }
   }, 8000 * playlist.length);
 
-  async function setupMessage(data: MessageData): Promise<void> {
-    // ...
-  }
 
   renderMessage(playlist[0]);
 
