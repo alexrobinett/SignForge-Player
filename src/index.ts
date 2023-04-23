@@ -19,7 +19,7 @@ interface MessageData {
 window.addEventListener('message', (event) => {
   console.log('click')
   console.log(event.origin)
- if (event.origin !== 'http://localhost:5173/dashboard/demo' || 'https://ds-cms.vercel.app'  ) return;
+ if (event.origin !== 'http://localhost:5173' || 'https://ds-cms.vercel.app'  ) return;
   
   if (event.data === 'clearLocalStorage') {
     localStorage.removeItem('playerId');
