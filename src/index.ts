@@ -16,6 +16,16 @@ interface MessageData {
   position: number
 }
 
+window.addEventListener('message', (event) => {
+
+ if (event.origin !== 'http://localhost:5173' || 'https://ds-cms.vercel.app'  ) return;
+
+  if (event.data === 'clearLocalStorage') {
+    localStorage.removeItem('playerId');
+  }
+});
+
+
 function sortPlaylistByPosition(playlist: MessageData[]): MessageData[] {
   return playlist.sort((a, b) => a.position - b.position);
 }
