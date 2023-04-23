@@ -17,13 +17,8 @@ interface MessageData {
 }
 
 window.addEventListener('message', (event) => {
-
-  console.log(event.origin)
-  console.log(event.origin)
-//  if (event.origin !== 'http://localhost:5173' || 'https://ds-cms.vercel.app'  ) return;
   
   if (event.data === 'clearLocalStorage') {
-    console.log('click should clear')
     localStorage.clear();
     location.reload()
   }
