@@ -17,13 +17,14 @@ interface MessageData {
 }
 
 window.addEventListener('message', (event) => {
-
- if (event.origin !== 'http://localhost:5173' || 'https://ds-cms.vercel.app'  ) return;
-
+  console.log('click')
+  console.log(event.origin)
+ if (event.origin !== 'http://localhost:5173/dashboard/demo' || 'https://ds-cms.vercel.app'  ) return;
+  
   if (event.data === 'clearLocalStorage') {
     localStorage.removeItem('playerId');
   }
-});
+})
 
 
 function sortPlaylistByPosition(playlist: MessageData[]): MessageData[] {
