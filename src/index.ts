@@ -22,7 +22,8 @@ window.addEventListener('message', (event) => {
  if (event.origin !== 'http://localhost:5173' || 'https://ds-cms.vercel.app'  ) return;
   
   if (event.data === 'clearLocalStorage') {
-    localStorage.removeItem('playerId');
+    localStorage.clear();
+    location.reload()
   }
 })
 
